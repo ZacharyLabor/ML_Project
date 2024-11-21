@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naive Bayes Predictor | RetailWise AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        header p {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            background: #ffffff;
+            color: #333;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 1.1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .button {
+            background: #6a11cb;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #2575fc;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f8f8;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .secondary {
+            text-decoration: none;
+            color: #2575fc;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Naive Bayes Predictor</h1>
+            <p>Classify customers based on income and spending score for personalized marketing.</p>
+        </header>
+        <main>
+            <form method="POST" action="/naive_bayes">
+                <label for="income">Income (USD):</label>
+                <input type="number" id="income" name="income" step="0.01" required>
+
+                <label for="spending_score">Spending Score (0-100):</label>
+                <input type="number" id="spending_score" name="spending_score" required>
+
+                <button type="submit" class="button">Predict</button>
+            </form>
+
+            {% if prediction %}
+            <div class="result">
+                <h3>Prediction Result:</h3>
+                <p>Customer Category: <strong>{{ prediction }}</strong></p>
+                <p>Income: ${{ income }}</p>
+                <p>Spending Score: {{ spending_score }}</p>
+            </div>
+            {% elif error %}
+            <div class="error">
+                <p>{{ error }}</p>
+            </div>
+            {% endif %}
+
+            <footer>
+                <a href="/" class="secondary">Back to Solutions</a>
+                <p>&copy; 2024 RetailWise AI Solutions</p>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
+
+

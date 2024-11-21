@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetailWise AI Solutions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Popup Window -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h1>Welcome to RetailWise AI Solutions</h1>
+            <p>Your trusted partner in empowering SMEs with AI-driven retail solutions.</p>
+            <h2>Company Overview</h2>
+            <p><strong>Mission:</strong> To empower SMEs in the retail sector through innovative machine learning solutions, enabling smarter decision-making, personalized customer engagement, and streamlined operations.</p>
+            <p><strong>Vision:</strong> To become the go-to AI solutions provider for SMEs in retail, driving growth and customer satisfaction with affordable and accessible technologies.</p>
+            <h3>Operational Goals</h3>
+            <ul>
+                <li>Enhance sales forecasting accuracy to assist SMEs in managing marketing and sales strategies.</li>
+                <li>Provide AI-driven customer segmentation for tailored promotions and improved retention.</li>
+                <li>Offer personalized product recommendations to create a better shopping experience.</li>
+                <li>Strengthen fraud detection systems for secure transactions.</li>
+                <li>Implement dynamic pricing models to help SMEs maximize revenue without compromising customer loyalty.</li>
+            </ul>
+            <button id="closePopup" class="button">Explore Solutions</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <header>
+        <h1>RetailWise AI Solutions</h1>
+        <p>Explore cutting-edge AI solutions tailored for SMEs in retail.</p>
+    </header>
+    <main>
+        <section class="card-container">
+            <div class="card">
+                <h3>Naive Bayes Predictor</h3>
+                <p>Classify customers based on income and spending score.</p>
+                <a href="/naive_bayes" class="button">Explore Now</a>
+            </div>
+            <div class="card">
+                <h3>RetailWise Model</h3>
+                <p>Analyze dynamic pricing strategies and customer trends.</p>
+                <a href="/retailwise" class="button">Explore Solutions</a>
+            </div>
+            <div class="card">
+                <h3>Label Encoder</h3>
+                <p>Learn how we transform data into actionable insights.</p>
+                <a href="/label_encoder" class="button">Learn More</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 RetailWise AI Solutions</p>
+    </footer>
+
+    <!-- JavaScript for Popup -->
+    <script>
+        const popup = document.getElementById('popup');
+        const closePopup = document.getElementById('closePopup');
+        closePopup.addEventListener('click', () => {
+            popup.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
+
+
+
