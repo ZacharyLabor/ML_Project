@@ -1,125 +1,50 @@
-/* General Styles */
+/* General Body Styling */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-/* Popup Styles */
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
-
-.popup-content {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.5s;
-}
-
-.popup-content h1 {
-    color: #004e89;
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.popup-content h2, .popup-content h3 {
-    color: #ff6f61;
-}
-
-.popup-content ul {
-    text-align: left;
-    padding-left: 20px;
-}
-
-.popup-content button {
-    background: #ff6f61;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298, #1c92d2);
     color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.popup-content button:hover {
-    background: #e85a50;
-}
-
-/* Header */
+/* Header Section */
 header {
     text-align: center;
-    padding: 30px 0;
-    background: linear-gradient(to right, #004e89, #ff6f61);
-    color: white;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ff512f, #dd2476, #ff6f61);
+    color: #fff;
+    border-bottom: 8px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 header h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     margin: 0;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    animation: fade-in-down 1.5s ease-in-out;
 }
 
 header p {
-    font-size: 1.2em;
-    margin-top: 10px;
+    font-size: 1.7em;
+    margin: 15px 0 0;
+    opacity: 0.9;
+    animation: fade-in 2s ease-in-out;
 }
 
-/* Cards */
-.card-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 20px;
+/* Header Animation */
+@keyframes fade-in-down {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.card h3 {
-    color: #ff6f61;
-}
-
-.card p {
-    margin: 20px 0;
-}
-
-.card .button {
-    text-decoration: none;
-    background: #004e89;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.card .button:hover {
-    background: #003b6f;
-}
-
-/* Animations */
-@keyframes fadeIn {
+@keyframes fade-in {
     from {
         opacity: 0;
     }
@@ -128,4 +53,161 @@ header p {
     }
 }
 
+/* Card Container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fade-in 1s ease-in-out;
+}
 
+/* Individual Card Styling */
+.card {
+    background: #fff;
+    color: #333;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s, background-color 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #f9f9f9, #ffffff);
+}
+
+.card h3 {
+    font-size: 2em;
+    color: #ff6f61;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 1.1em;
+    margin: 0 0 20px;
+    line-height: 1.6;
+}
+
+.card a {
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 1.1em;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.card a:hover {
+    background: linear-gradient(to left, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    color: #fff;
+    margin-top: 50px;
+    font-size: 0.95em;
+    border-top: 8px solid rgba(255, 255, 255, 0.3);
+}
+
+footer p {
+    margin: 0;
+    animation: fade-in 1s ease-in-out;
+}
+
+/* Popup Styling */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup-content {
+    background: #fff;
+    color: #333;
+    padding: 35px;
+    border-radius: 12px;
+    max-width: 650px;
+    width: 90%;
+    text-align: center;
+    animation: popup-fade-in 0.5s ease-in-out;
+}
+
+.popup-content h1 {
+    margin-bottom: 15px;
+    color: #dd2476;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.popup-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.popup-content ul li {
+    margin: 8px 0;
+}
+
+.popup-content ul li::before {
+    content: "• ";
+    color: #2575fc;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+.button {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.button:hover {
+    background: linear-gradient(to left, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+/* Popup Animation */
+@keyframes popup-fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

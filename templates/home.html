@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RetailWise AI Solutions</title>
+    <!-- Link to the external CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -27,11 +28,15 @@
         </div>
     </div>
 
-    <!-- Main Content -->
-    <header>
-        <h1>RetailWise AI Solutions</h1>
-        <p>Explore cutting-edge AI solutions tailored for SMEs in retail.</p>
+    <!-- Enhanced Header -->
+    <header class="custom-header">
+        <div class="header-overlay">
+            <h1>RetailWise AI Solutions</h1>
+            <p>Empowering SMEs with AI-driven retail innovation.</p>
+        </div>
     </header>
+
+    <!-- Main Content -->
     <main>
         <section class="card-container">
             <div class="card">
@@ -49,6 +54,21 @@
                 <p>Learn how we transform data into actionable insights.</p>
                 <a href="/label_encoder" class="button">Learn More</a>
             </div>
+            <div class="card">
+                <h3>Brand Name Encoder</h3>
+                <p>Encode brand names for AI processing.</p>
+                <a href="/brand_name_encoder" class="button">Try Encoding</a>
+            </div>
+            <div class="card">
+                <h3>Product Category Encoder</h3>
+                <p>Transform product categories into machine-readable data.</p>
+                <a href="/product_category_encoder" class="button">Try Encoding</a>
+            </div>
+            <div class="card">
+                <h3>Product Category Model</h3>
+                <p>Predict product categories based on features.</p>
+                <a href="/product_category_model" class="button">Explore Prediction</a>
+            </div>
         </section>
     </main>
     <footer>
@@ -65,6 +85,3 @@
     </script>
 </body>
 </html>
-
-
-
